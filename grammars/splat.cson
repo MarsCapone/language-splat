@@ -1,0 +1,91 @@
+'scopeName': 'source.splat'
+'name': 'Splat'
+'fileTypes': ['SPL', 'spl']
+
+'patterns': [
+    {
+        'match': '\\b(-?([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b'
+        'name': 'constant.numeric.splat'
+    }
+
+    {
+        'match': '\\b(\\"[\\w\\d]*\\")\\b'
+        'name': 'string.quoted.single.splat'
+    }
+
+    {
+        'match': '\\b(true|false)\\b'
+        'name': 'constant.boolean.splat'
+    }
+
+    {
+        'comment': 'function definition'
+        'match': '\\b(function)\\s+(\\w+)\\s+(\\w+[\\w\\d]*)\\s*\\((\\w+)\\s+(\\w+)\\)'
+        'captures':
+            '1':
+                'name': 'keyword.control.function.splat'
+            '2':
+                'name': 'storage.type.splat'
+            '3':
+                'name': 'entity.name.function.splat'
+            '4':
+                'name': 'storage.type.splat'
+            '5':
+                'name': 'variable.parameter'
+        'name': 'meta.function.splat'
+    }
+
+    {
+        'comment': 'type definitions'
+        'match': '\\b\\(?(number|string|boolean|function)(\\s+list)?\\)?\\b'
+        'name': 'storage.type.splat'
+    }
+
+    {
+        'comment': 'flow conditionals'
+        'match': '\\b(if|else)\\b'
+        'name': 'keyword.control.conditional.splat'
+    }
+
+    {
+        'comment': 'let statements'
+        'match': '\\b(let|\\#)\\b'
+        'name': 'keyword.control.statement.splat'
+    }
+
+    {
+        'match': '(stdin|\\[\\])'
+        'name': 'constant.splat'
+    }
+
+    {
+        'comment': 'commented block'
+        'begin': '<\\|'
+        'end': '\\|>'
+        'name': 'comment.block.splat'
+    }
+
+    {
+        'comment': 'predefined functions'
+        'match': '\\b(head|tail|split|show|showln|::)\\b'
+        'name': 'keyword.control.statement.splat'
+    }
+
+    {
+        'comment': 'keywords that evaluate to true or false'
+        'match': '\\b(or|and|not)\\b'
+        'name': 'keyword.operator.logical.splat'
+    }
+
+    {
+        'comment': 'comparison symbols'
+        'match': '<\\=|>\\=|\\=\\=|<|>|\\!\\='
+        'name': 'keyword.operator.comparison.splat'
+    }
+
+    {
+        'comment': 'assignment operators'
+        'match': '\\='
+        'name': 'keyword.operator.assignment.splat'
+    }
+]
